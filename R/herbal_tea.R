@@ -1,0 +1,86 @@
+#' Traditional Chinese Medicinal Herbal Tea Consumption Survey Data
+#'
+#' A dataset containing questionnaire responses on awareness,
+#' purchasing behavior, consumer preferences, purchase intentions,
+#' and satisfaction with traditional Chinese medicinal herbal tea.
+#'
+
+#' @format A data frame containing questionnaire responses
+#' with the following 68 variables:
+#' \describe{
+#'   \item{RespondentID}{Unique respondent identifier.}
+#'   \item{Duration}{Questionnaire completion duration.}
+#'   \item{Q1}{Response to question 1.}
+#'   \item{Q2}{Response to question 2.}
+#'   \item{Q3}{Response to question 3.}
+#'   \item{Q4}{Response to question 4.}
+#'   \item{Q5}{Response to question 5.}
+#'   \item{Q6}{Response to question 6.}
+#'   \item{Q7_1}{Response to question 7, item 1.}
+#'   \item{Q7_2}{Response to question 7, item 2.}
+#'   \item{Q7_3}{Response to question 7, item 3.}
+#'   \item{Q7_4}{Response to question 7, item 4.}
+#'   \item{Q7_5}{Response to question 7, item 5.}
+#'   \item{Q7_6}{Response to question 7, item 6.}
+#'   \item{Q7_7}{Response to question 7, item 7.}
+#'   \item{Q7_8}{Response to question 7, item 8.}
+#'   \item{Q8_1}{Response to question 8, item 1.}
+#'   \item{Q8_2}{Response to question 8, item 2.}
+#'   \item{Q8_3}{Response to question 8, item 3.}
+#'   \item{Q8_4}{Response to question 8, item 4.}
+#'   \item{Q8_5}{Response to question 8, item 5.}
+#'   \item{Q8_6}{Response to question 8, item 6.}
+#'   \item{Q8_7}{Response to question 8, item 7.}
+#'   \item{Q9}{Response to question 9.}
+#'   \item{Q10}{Response to question 10.}
+#'   \item{Q11_1}{Response to question 11, item 1.}
+#'   \item{Q11_2}{Response to question 11, item 2.}
+#'   \item{Q11_3}{Response to question 11, item 3.}
+#'   \item{Q11_4}{Response to question 11, item 4.}
+#'   \item{Q11_5}{Response to question 11, item 5.}
+#'   \item{Q11_6}{Response to question 11, item 6.}
+#'   \item{Q11_7}{Response to question 11, item 7.}
+#'   \item{Q11_8}{Response to question 11, item 8.}
+#'   \item{Q12_1}{Response to question 12, item 1.}
+#'   \item{Q12_2}{Response to question 12, item 2.}
+#'   \item{Q12_3}{Response to question 12, item 3.}
+#'   \item{Q12_4}{Response to question 12, item 4.}
+#'   \item{Q12_5}{Response to question 12, item 5.}
+#'   \item{Q13_1}{Response to question 13, item 1.}
+#'   \item{Q13_2}{Response to question 13, item 2.}
+#'   \item{Q13_3}{Response to question 13, item 3.}
+#'   \item{Q13_4}{Response to question 13, item 4.}
+#'   \item{Q13_5}{Response to question 13, item 5.}
+#'   \item{Q13_6}{Response to question 13, item 6.}
+#'   \item{Q13_7}{Response to question 13, item 7.}
+#'   \item{Q13_8}{Response to question 13, item 8.}
+#'   \item{Q14_1}{Response to question 14, item 1.}
+#'   \item{Q14_2}{Response to question 14, item 2.}
+#'   \item{Q14_3}{Response to question 14, item 3.}
+#'   \item{Q14_4}{Response to question 14, item 4.}
+#'   \item{Q14_5}{Response to question 14, item 5.}
+#'   \item{Q14_6}{Response to question 14, item 6.}
+#'   \item{Q14_7}{Response to question 14, item 7.}
+#'   \item{Q15}{Response to question 15.}
+#'   \item{Q16}{Response to question 16.}
+#'   \item{Q17}{Response to question 17.}
+#'   \item{Q18}{Response to question 18.}
+#'   \item{Q19}{Response to question 19.}
+#'   \item{Q20}{Response to question 20.}
+#'   \item{Q21}{Response to question 21.}
+#'   \item{Q22}{Response to question 22.}
+#'   \item{Q23}{Response to question 23.}
+#'   \item{Q24}{Response to question 24.}
+#'   \item{Q25}{Response to question 25.}
+#'   \item{Q26}{Response to question 26.}
+#'   \item{Q27}{Response to question 27.}
+#'   \item{Q28}{Response to question 28.}
+#'   \item{Q29}{Response to question 29.}
+#' }
+#' @source Guangbao Guo and Ningxin Hu (2024, January).
+#' Traditional Chinese Medicinal Herbal Tea Questionnaire Survey.
+#' @author Guangbao Guo, Ningxin Hu
+#' @examples
+#' data(herbal_tea_survey)
+#' head(herbal_tea_survey)
+"herbal_tea_survey"

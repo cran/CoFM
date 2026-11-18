@@ -20,7 +20,7 @@ A list containing:
 \description{
 This function performs Projected Principal Component Analysis (PPC) to estimate factor loadings
 and specific variances. It projects the data onto a specific subspace before performing eigen
-decomposition. Unlike \code{\link{PPC_CoFM}}, this function does not calculate error metrics
+decomposition. Unlike \code{\link{PPC.CoFM}}, this function does not calculate error metrics
 against true parameters.
 }
 \examples{
@@ -28,7 +28,7 @@ against true parameters.
 set.seed(123)
 
 # 1. Generate toy data using CoFM
-sim <- CoFM(n = 200, p = 6, m = 2, type = "Clayton", param = 2.0)
+sim <- CoFM(n = 200, p = 6, m = 2, theta = 2.0, distribution_type = "Clayton")
 obs_data <- sim$data
 
 # 2. Apply PPC method (extract 2 factors)

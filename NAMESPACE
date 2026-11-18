@@ -2,11 +2,29 @@
 
 export(CoFM)
 export(Copula_errors)
-export(FanPC_CoFM)
+export(DPOET)
+export(DPPC)
+export(DUPPC)
+export(FanPC.CoFM)
 export(FanPC_basic)
-export(PC_CoFM)
-export(PPC_CoFM)
+export(PC.CoFM)
+export(POET)
+export(PPC)
+export(PPC.CoFM)
 export(PPC_basic)
-export(PPC_new)
-export(PPC_u)
-export(poet)
+export(UPPC)
+importFrom(MASS,mvrnorm)
+importFrom(copula,
+  claytonCopula,
+  frankCopula,
+  gumbelCopula,
+  rCopula
+)
+importFrom(matrixcalc,frobenius.norm)
+importFrom(stats,
+  cor,
+  cov,
+  rnorm,
+  runif,
+  sd
+)

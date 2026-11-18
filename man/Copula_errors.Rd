@@ -2,59 +2,35 @@
 % Please edit documentation in R/Copula_errors.R
 \name{Copula_errors}
 \alias{Copula_errors}
-\title{Generate Copula-Distributed Error Terms}
+\title{Copula Errors Function}
 \usage{
-Copula_errors(
-  n,
-  type = "Clayton",
-  dim = 2,
-  param = NULL,
-  extra_params = list()
-)
+Copula_errors(data, copula_type, param)
 }
 \arguments{
-\item{n}{Integer. The number of samples (rows) to generate.}
+\item{data}{Matrix of data.}
 
-\item{type}{Character. The type of Copula to use. Options: "Clayton", "Gumbel",
-"Frank", "t", "Mixed", "Galambos", "Normal".}
+\item{copula_type}{Character string specifying the type of Copula (e.g., "clayton", "gumbel", "frank", "t", "nested", "mixed", "galambos", "normal").}
 
-\item{dim}{Integer. The dimension of the copula (number of columns/variables).
-Used for Archimedean/Elliptical copulas. For "Mixed" the default is 3.}
-
-\item{param}{Numeric or Matrix. The main parameter for the copula (e.g., theta for
-Archimedean, correlation vector/matrix for Normal). If NULL, default values are used.}
-
-\item{extra_params}{List. Additional parameters for specific copulas (e.g., \code{df} for t-Copula,
-\code{w} for Mixed).}
+\item{param}{Parameters for the specified Copula type.}
 }
 \value{
-A numeric matrix of dimension (n x dim) containing the generated random samples.
+A named vector containing:
+\item{MSE}{Mean Squared Error for the Copula distribution.}
+\item{RelativeError}{Relative error for the Copula distribution.}
 }
 \description{
-Generate random samples (error terms) from various copula distributions,
-including Archimedean (Clayton, Gumbel, Frank), Elliptical (t, Normal),
-Mixed, and Extreme-Value (Galambos) copulas. Useful for simulation studies
-involving non-normal error structures.
+This function calculates the Mean Squared Error (MSE) and relative error for Copula distributions.
 }
 \examples{
-# Examples should be fast and reproducible for CRAN checks
+# Example for Clayton Copula
+if (!requireNamespace("copula", quietly = TRUE)) {
+  utils::install.packages("copula")
+}
+library(copula)
 set.seed(123)
-
-# Example 1: Clayton Copula (toy example)
-U_clayton <- Copula_errors(n = 200, type = "Clayton", dim = 2, param = 2)
-head(U_clayton)
-
-# Example 2: t-Copula with degrees of freedom (toy example)
-U_t <- Copula_errors(
-  n = 200, type = "t", dim = 2, param = 0.7,
-  extra_params = list(df = 4)
-)
-head(U_t)
-
-# Example 3: Multivariate Normal Copula (dim = 3)
-# normalCopula() expects the upper-triangular correlations as a vector:
-# (rho_12, rho_13, rho_23) for dim=3
-rho_vec <- c(0.5, 0.3, 0.4)
-U_normal <- Copula_errors(n = 200, type = "Normal", dim = 3, param = rho_vec)
-head(U_normal)
+n <- 1000
+clayton.cop <- copula::claytonCopula(2, dim = 2)
+data <- copula::rCopula(n, clayton.cop)
+errors <- Copula_errors(data, "clayton", 2)
+print(errors)
 }

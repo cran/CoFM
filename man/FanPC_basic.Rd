@@ -20,7 +20,7 @@ A list containing:
 \description{
 This function performs factor analysis using a principal-component (FanPC) approach.
 It estimates the factor loading matrix and uniquenesses from the correlation matrix
-of the input data. Unlike \code{\link{FanPC_CoFM}}, this function does not calculate
+of the input data. Unlike \code{\link{FanPC.CoFM}}, this function does not calculate
 error metrics against true parameters, making it suitable for simple estimation tasks.
 }
 \examples{
@@ -28,7 +28,7 @@ error metrics against true parameters, making it suitable for simple estimation 
 set.seed(123)
 
 # 1. Generate synthetic data using CoFM (toy example)
-sim <- CoFM(n = 200, p = 6, m = 2, type = "Clayton", param = 2.0)
+sim <- CoFM(n = 200, p = 6, m = 2, theta = 2.0, distribution_type = "Clayton")
 obs_data <- sim$data
 
 # 2. Apply FanPC method (extract 2 factors)

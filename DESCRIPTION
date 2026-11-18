@@ -1,7 +1,7 @@
 Package: CoFM
 Type: Package
 Title: Copula Factor Models
-Version: 1.1.4
+Version: 1.2.6
 Authors@R: c(person(given = "Guangbao", family = "Guo", role = c("aut", "cre"), email = "ggb11111111@163.com"),
     person(given = "Xin", family = "Gao", role = "aut"))
 Author: Guangbao Guo [aut, cre],
@@ -19,12 +19,12 @@ Description: Provides tools for factor analysis in high-dimensional settings und
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.3.3
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.1.0)
 Suggests: testthat (>= 3.0.0), spelling
 NeedsCompilation: no
-Imports: MASS, psych, copula, matrixcalc, stats
+Imports: MASS, copula, matrixcalc, stats
 Language: en-US
-Packaged: 2026-01-22 13:15:54 UTC; admin
+Config/roxygen2/version: 8.1.1
+Packaged: 2026-11-16 11:02:37 UTC; admin
 Repository: CRAN
-Date/Publication: 2026-01-27 20:50:07 UTC
+Date/Publication: 2026-11-18 12:20:02 UTC

@@ -2,45 +2,39 @@
 % Please edit documentation in R/CoFM.R
 \name{CoFM}
 \alias{CoFM}
-\title{Generate Copula Factor Models Data and Perform Tests}
+\title{The CoFM function is to generate Copula Factor Models data.}
 \usage{
-CoFM(n = 1000, p = 10, m = 5, type = "Clayton", param = 2)
+CoFM(n, p, m, theta, distribution_type)
 }
 \arguments{
-\item{n}{Integer. Sample size (number of rows). Default is 1000.}
+\item{n}{Sample size.}
 
-\item{p}{Integer. Number of observed variables (columns). Default is 10.}
+\item{p}{Sample dimensionality.}
 
-\item{m}{Integer. Number of factors. Default is 5.}
+\item{m}{Number of factors.}
 
-\item{type}{Character. The type of Copula for error terms. Options: "Clayton", "Gumbel", "Frank".}
+\item{theta}{A numerical parameter used in the copula distribution.}
 
-\item{param}{Numeric. The parameter for the Copula (theta). Default is 2.0.}
+\item{distribution_type}{The type of distribution.}
 }
 \value{
 A list containing:
-\item{data}{The generated data matrix (n x p).}
-\item{KMO}{The results of the Kaiser-Meyer-Olkin test.}
-\item{Bartlett}{The results of Bartlett's test of sphericity.}
-\item{True_Params}{A list containing the true parameters used (F, A, D, mu).}
+\item{data}{A matrix of generated data.}
+\item{A}{A matrix representing the factor loadings.}
+\item{D}{A diagonal matrix representing the unique variances.}
 }
 \description{
-This function simulates data based on a Copula Factor Model structure.
-It generates factor scores, factor loadings, and error terms (using specified Copula
-distributions), combines them to create the observed data, and then performs KMO and
-Bartlett's tests on the generated data.
+The function supports various elliptical distributions for generating the data,
+including: Elliptical-Normal Distribution, Elliptical-t Distribution, Elliptical Distribution.
 }
 \examples{
-# Examples should be fast and reproducible for CRAN checks
-set.seed(123)
-
-# Clayton copula errors (toy size)
-res1 <- CoFM::CoFM(n = 200, p = 6, m = 2, type = "Clayton", param = 2)
-res1$KMO
-res1$Bartlett
-
-# Gumbel copula errors (toy size)
-res2 <- CoFM::CoFM(n = 150, p = 6, m = 2, type = "Gumbel", param = 2)
-head(res2$data)
+library(copula)
+library(MASS)
+n <- 1000
+p <- 10
+m <- 5
+theta <- 2.0
+distribution_type <- "Clayton"
+X <- CoFM(n, p, m, theta, distribution_type)
 
 }
